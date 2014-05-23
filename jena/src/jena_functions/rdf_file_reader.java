@@ -15,6 +15,7 @@ package jena_functions;
  * 
  * Exceptions that can occure in this class: 
  * > IllegalArgumentException - when the given path or filename doesn't exist
+ * > RiotException            - when the given file isn't a vaild rdf-file
  * 
  * 
  *  Created on: 23.05.2014
@@ -25,6 +26,8 @@ package jena_functions;
  * Imports
 **************************************************************/
 import java.io.InputStream;
+
+import org.apache.jena.riot.RiotException;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
@@ -59,7 +62,7 @@ public class rdf_file_reader{
 	 *                   for the root-directory is "./" followed by subfolders
 	 *                   "./subfolderexample/subsubfolderexample/"
 	 **********************************************************************/
-	public void read_file(String filename, String path) throws IllegalArgumentException {
+	public void read_file(String filename, String path) throws IllegalArgumentException, RiotException {
 		this.path     = path;
 		this.filename = filename;
 		String filepath = path + filename;
@@ -81,7 +84,7 @@ public class rdf_file_reader{
 	 * and reads the content into a rdf-model object
 	 * @param filename > string with the name of the rdf-file to open
 	 **********************************************************************/
-	public void read_file(String filename) throws IllegalArgumentException{
+	public void read_file(String filename) throws IllegalArgumentException, RiotException{
 		read_file(filename, ROOT_PATH);
 	}//end method open_file(filename)
 	

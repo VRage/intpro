@@ -1,15 +1,14 @@
 package jena_functions._pawlak;
 
-import com.hp.hpl.jena.datatypes.RDFDatatype;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.OutputStream;
+
 import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
-import com.hp.hpl.jena.rdf.arp.states.RDFCollection;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.Property;
-import com.hp.hpl.jena.rdf.model.Resource;
-import com.hp.hpl.jena.rdf.model.Statement;
 import com.hp.hpl.jena.vocabulary.RDFS;
-import com.hp.hpl.jena.vocabulary.RDFSyntax;
 
 /** Das Objektiv Beispiel in Java Programmiert **/
 
@@ -18,7 +17,7 @@ import com.hp.hpl.jena.vocabulary.RDFSyntax;
 public class TestModelObjektiv {
 	
 	
-	public static void main(String[] args)
+	public static void main(String[] args) throws FileNotFoundException
 	{
 		//############################################################
 		/** benötigte Strings **/
@@ -201,6 +200,8 @@ public class TestModelObjektiv {
 		
 		
 		/** Hier kommt noch eine Speicherfunktion hin **/
+		OutputStream file_turtle = new FileOutputStream("./jena/" + "beispielontologie.ttl");
+		objectiv.write(file_turtle, "TURTLE");
 	}//end main
 	
 	private static String concatStrings(String s1, String s2){
