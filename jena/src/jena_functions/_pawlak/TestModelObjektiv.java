@@ -1,10 +1,15 @@
 package jena_functions._pawlak;
 
+import com.hp.hpl.jena.datatypes.RDFDatatype;
+import com.hp.hpl.jena.datatypes.xsd.XSDDatatype;
+import com.hp.hpl.jena.rdf.arp.states.RDFCollection;
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
 import com.hp.hpl.jena.rdf.model.Property;
 import com.hp.hpl.jena.rdf.model.Resource;
 import com.hp.hpl.jena.rdf.model.Statement;
+import com.hp.hpl.jena.vocabulary.RDFS;
+import com.hp.hpl.jena.vocabulary.RDFSyntax;
 
 /** Das Objektiv Beispiel in Java Programmiert **/
 
@@ -63,13 +68,139 @@ public class TestModelObjektiv {
 		
 		objectiv.createResource(concatStrings(doerr, Sony)).addProperty(
 				objectiv.createProperty(doerr + concatStrings(hat, "Homepage")), 
-				objectiv.createResource(doerr + SonyHomepage));
+				SonyHomepage,
+				XSDDatatype.XSDstring);
 		
 		objectiv.createResource(concatStrings(doerr, Sony)).addProperty(
 				objectiv.createProperty(doerr + concatStrings(hat, "Bezeichnung")), 
-				objectiv.createResource(doerr + Sony));
+				Sony,
+				XSDDatatype.XSDstring);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(allgemeineDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Modellbezeichnung")), 
+				"28-75 mm 2,8 SAM SAL-2875",
+				XSDDatatype.XSDstring);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(allgemeineDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Gewicht")), 
+				"565",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(allgemeineDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Aussendurchmesser")), 
+				"77",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(allgemeineDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Laenge")), 
+				"94",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(allgemeineDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Bayonettanschluss")), 
+				objectiv.createResource(doerr + "SonyAF"));
 		//allgemeineAusstattung###################################################################
+		//technischeAusstattung###################################################################
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Filtergroesse")), 
+				"67",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "BrennweiteMin")), 
+				"28",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "BrennweiteMax")), 
+				"75",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Lichtstaerke")), 
+				"2.8",
+				XSDDatatype.XSDdouble);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Naheinstellgrenze")), 
+				"380",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "MaxAbbildungmassstab")), 
+				"1:4,55",
+				XSDDatatype.XSDstring);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "AnzahlBlendlamellen")), 
+				"7",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "AnzahlLinsen")), 
+				"16",
+				XSDDatatype.XSDint);
+		
+		objectiv.createResource(concatStrings(doerr, concatStrings(technischeDaten, Sony28_75))).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "AnzahlGruppen")), 
+				"14",
+				XSDDatatype.XSDint);
+		//technischeAusstattung###################################################################
+		//Ausstattung###################################################################
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "AsphaerischeLinsen")), 
+				"false",
+				XSDDatatype.XSDboolean);
+		
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "AutoFokus")), 
+				"true",
+				XSDDatatype.XSDboolean);
+		
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Bildstabilisator")), 
+				"false",
+				XSDDatatype.XSDboolean);
+		
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "EDLinsen")), 
+				"false",
+				XSDDatatype.XSDboolean);
+		
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Innenfokusierung")), 
+				"false",
+				XSDDatatype.XSDboolean);
+		
+		objectiv.createResource(doerr + ausstattung).addProperty(
+				objectiv.createProperty(doerr + concatStrings(hat, "Ultraschallmotor")), 
+				"true",
+				XSDDatatype.XSDboolean);
+		//Ausstattung###################################################################
+		//Subclasses###################################################################
+		objectiv.createProperty(doerr + "Fotokameraobjektiv");
+		objectiv.createProperty(doerr + "Zoomobjektiv");
+		objectiv.createProperty("Weitwinkelobjektiv");
+		
+		objectiv.createResource(doerr + Sony28_75).addProperty(
+				RDFS.subClassOf, 
+				objectiv.createProperty(doerr + "Zoomobjektiv"));
+		objectiv.createResource(doerr + Sony28_75).addProperty(
+				RDFS.subClassOf, 
+				objectiv.createProperty(doerr + "Weitwinkelobjektiv"));
+		
+		objectiv.createResource("Zoomobjektiv").addProperty(
+				RDFS.subClassOf, 
+				objectiv.createProperty(doerr + "Fotokameraobjektiv"));
+		
+		objectiv.createResource("Weitwinkelobjektiv").addProperty(
+				RDFS.subClassOf, 
+				objectiv.createProperty(doerr + "Fotokameraobjektiv"));
+		//Subclasses###################################################################
 		objectiv.write( System.out , "TURTLE");
+		
+		
+		/** Hier kommt noch eine Speicherfunktion hin **/
 	}//end main
 	
 	private static String concatStrings(String s1, String s2){
