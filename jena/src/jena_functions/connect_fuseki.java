@@ -39,7 +39,9 @@ public class connect_fuseki {
 		connect_fuseki f = new connect_fuseki();
 		
 		// First parameter is the absolute path of "\fuseki_ap\config.ttl", second parameter is absolute path of directory "\fuseki_api\pages"
-		connect_fuseki.connect_to_fuseki("C://Users//rasheed//Desktop//fuseki_api//config.ttl", "C://Users//rasheed//Desktop//fuseki_api//pages");
+		connect_fuseki.connect_to_fuseki("C://Users//rasheed//git//jena//jena//fuseki_api//config.ttl", "C://Users//rasheed//git//jena//jena//fuseki_api//pages");
+		
+		System.out.println("Test1");
 	}
 
 }
