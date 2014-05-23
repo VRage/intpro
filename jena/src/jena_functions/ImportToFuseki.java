@@ -3,22 +3,37 @@ package jena_functions;
 import com.hp.hpl.jena.query.DatasetAccessor;
 import com.hp.hpl.jena.rdf.model.Model;
 
+/**
+ * Let you import a rdf-file into a Fuseki Server
+ * 
+ * @author Jakob Nisin
+ *
+ */
+
 public class ImportToFuseki {
 	
-	private DatasetAccessor accesor;
+	private DatasetAccessor accessor;
 	private Model rdfdata;
 	
+	/**
+	 * This let you handle DatasetAccessor and a Model gained from other Classes
+	 * 
+	 * @param accesor
+	 * @param rdfdata
+	 */
+	
 	public ImportToFuseki(DatasetAccessor accesor, Model rdfdata) {
-		this.accesor = accesor;
+		this.accessor = accesor;
 		this.rdfdata = rdfdata;
 	}
 
+	//getter- and setter Methods 
 	public DatasetAccessor getAccesor() {
-		return accesor;
+		return accessor;
 	}
 
 	public void setAccesor(DatasetAccessor accesor) {
-		this.accesor = accesor;
+		this.accessor = accesor;
 	}
 
 	public Model getRdfdata() {
@@ -29,12 +44,16 @@ public class ImportToFuseki {
 		this.rdfdata = rdfdata;
 	}
 	
+	
+	/**
+	 * Add a rdfdata model into your fuseki server
+	 */
 	public void storeToFuseki() 
 	{
-		if(accesor != null && rdfdata != null)
-			accesor.add(rdfdata);
+		if(accessor != null && rdfdata != null)
+			accessor.add(rdfdata);
 		else
-			System.out.println("No Model or serveraccessor added");
+			System.out.println("No model or serveraccessor added");
 	}
 
 }
