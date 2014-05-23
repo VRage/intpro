@@ -43,7 +43,7 @@ public class read_write_fuseki {
 		Model m = d.getModel();
 		
 //		// Test print RDF-model to console, can also be saved into a File with the Read-/Write-method --> Needs further implementation for this
-//		m.write(System.out, "TURTLE");
+		m.write(System.out, "TURTLE");
 
 		// return RDF-model
 		return m;
@@ -66,27 +66,27 @@ public class read_write_fuseki {
 	public static void main(String[] args) {
 		read_write_fuseki a = new read_write_fuseki();
 		
-//		// Test to get RDF-model from Fuseki
-//		try {
-//			a.get_RDF_from_Fuseki();
-//		} catch (HttpHostConnectException e) {
-//			// TODO Auto-generated catch block
-//			e.printStackTrace();
-//		}
-		
-		// Test to store RDF-model to Fuseki
+		// Test to get RDF-model from Fuseki
 		try {
-			// Open a RDF-data and store the content to Fuseki (Test)
-			String filename = "C://Users//rasheed//Desktop//eclipse//workspace//jena//camera.owl";
-			Model m = ModelFactory.createDefaultModel();
-			InputStream in = FileManager.get().open(filename);
-			m.read(in, "");
-			
-			read_write_fuseki.store_RDF_to_Fuseki(m);
+			a.get_RDF_from_Fuseki();
 		} catch (HttpHostConnectException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
+		
+		// Test to store RDF-model to Fuseki
+//		try {
+//			// Open a RDF-data and store the content to Fuseki (Test)
+//			String filename = "./camera.owl";
+//			Model m = ModelFactory.createDefaultModel();
+//			InputStream in = FileManager.get().open(filename);
+//			m.read(in, "");
+//			
+//			read_write_fuseki.store_RDF_to_Fuseki(m);
+//		} catch (HttpHostConnectException e) {
+//			// TODO Auto-generated catch block
+//			e.printStackTrace();
+//		}
 	}
 
 }

@@ -50,7 +50,7 @@ public class read_rdf {
 //		m.write(System.out, "TURTLE");
 		
 		// 2. Save RDF-Model directly to a file, select file format(Turtle, RDF/XML etc.), CHANGE DESTINATION
-		String file_dest = "C://Users//rasheed//Desktop//eclipse//workspace//jena";
+		String file_dest = "./jena/";
 		try {
 			OutputStream file_turtle = new FileOutputStream(file_dest + "file_turtle.ttl");
 			OutputStream file_xml = new FileOutputStream(file_dest + "file_xml.rdf");
@@ -70,7 +70,7 @@ public class read_rdf {
 		
 		// absolute path of the file
 		// example: "C://Users/YOURNAME//Desktop//jena_tests//camera.owl
-		String file = "C://Users//rasheed//Desktop//eclipse//workspace//jena//camera.owl";
+		String file = "./camera.owl";
 		read_from_file(file);
 	}
 
