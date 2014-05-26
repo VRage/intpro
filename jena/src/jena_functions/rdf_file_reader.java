@@ -41,25 +41,20 @@ public class rdf_file_reader{
 	/*********************************************************************
 	 * read_file(filename, path)
 	 * opens an existing RDF-file and reads the content into a rdf-model object + returning this model to caller
-	 * @param filename > string with the name of the rdf-file to open
-	 * @param path     > string with the absolute or relative path of the rdf-file
+	 * @param filepath > the filepath to the file
 	 * 				   > relative paths must be in the same root directory 
 	 *                   as the rdf_file_reader class. the representative shortcut 
 	 *                   for the root-directory is "./" followed by subfolders
 	 *                   "./subfolderexample/subsubfolderexample/"
 	 **********************************************************************/
-	public static Model read_file(String filename, String path) 
+	public static Model read_file(String filepath) 
 			throws RDFFileNotFoundException, RDFFileNotValidException {
-		//creating file path with filename string
-		String filepath = path + filename;
 		
 		//creating Inputstream to valid file existence
 		InputStream in  = FileManager.get().open(filepath);
 		
 		if(in == null){
-			throw new RDFFileNotFoundException("File not found in:\n" 
-												+"Path " + path + "\n"  
-												+"Filename: " + filename);
+			throw new RDFFileNotFoundException("File not found in: filepath");
 		}//end if(in == null)
 		
 		//creating and returning the model to the caller
