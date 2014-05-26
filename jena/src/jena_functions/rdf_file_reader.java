@@ -31,8 +31,10 @@ import org.apache.jena.riot.RiotException;
 
 import com.hp.hpl.jena.rdf.model.Model;
 import com.hp.hpl.jena.rdf.model.ModelFactory;
-import com.hp.hpl.jena.rdf.model.ModelFactoryBase;
 import com.hp.hpl.jena.util.FileManager;
+
+import exceptions.RDFFileExceptions.RDFFileNotFoundException;
+import exceptions.RDFFileExceptions.RDFFileNotValidException;
 
 public class rdf_file_reader{
 	
@@ -46,7 +48,8 @@ public class rdf_file_reader{
 	 *                   for the root-directory is "./" followed by subfolders
 	 *                   "./subfolderexample/subsubfolderexample/"
 	 **********************************************************************/
-	public static Model read_file(String filename, String path) throws IllegalArgumentException, RiotException {
+	public static Model read_file(String filename, String path) 
+			throws RDFFileNotFoundException, RDFFileNotValidException {
 		//creating file path with filename string
 		String filepath = path + filename;
 		
@@ -54,13 +57,20 @@ public class rdf_file_reader{
 		InputStream in  = FileManager.get().open(filepath);
 		
 		if(in == null){
-			throw new IllegalArgumentException("File not found in:\n" 
+			throw new RDFFileNotFoundException("File not found in:\n" 
 												+"Path " + path + "\n"  
 												+"Filename: " + filename);
 		}//end if(in == null)
 		
 		//creating and returning the model to the caller
-		return ModelFactory.createDefaultModel().read((filepath) , null);
+		Model m;
+		try{
+			return ModelFactory.createDefaultModel().read((filepath) , null);
+		}
+		catch (RiotException e){
+			throw new RDFFileNotValidException();
+		}
+		
 		
 	}//end method open_file(filename, path)
 }//end class
