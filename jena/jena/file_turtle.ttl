@@ -1,0 +1,219 @@
+@prefix :      <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#> .
+@prefix rdfs:  <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix owl:   <http://www.w3.org/2002/07/owl#> .
+@prefix xsd:   <http://www.w3.org/2001/XMLSchema#> .
+@prefix rdf:   <http://www.w3.org/1999/02/22-rdf-syntax-ns#> .
+
+:hatLänge  a         owl:DatatypeProperty ;
+        rdfs:domain  :Allgemeine_Daten ;
+        rdfs:range   xsd:int .
+
+:Naheinstellgrenze  a          :Technische_Daten , owl:NamedIndividual ;
+        :hatNaheinstellgrenze  "380"^^xsd:int .
+
+:Modell-Bezeichnung  a         :Allgemeine_Daten , owl:NamedIndividual ;
+        :hatModellbezeichnung  "\"28-75 mm 2,8 SAM AL-2875\""^^xsd:string .
+
+:Adapter  a     owl:Class .
+
+:hatBildstabilisator  a  owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
+
+:hatMaxAbbildungsmassstab
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:string .
+
+:Hersteller  a  owl:Class .
+
+:Allgemeine_Daten  a  owl:Class .
+
+:Innenfokus  a                 :Austattung , owl:NamedIndividual ;
+        :hatInnenfokussierung  false .
+
+:Bildstabilisator  a          :Austattung , owl:NamedIndividual ;
+        :hatBildstabilisator  false .
+
+:hatEDLinsen  a      owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
+
+<http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26>
+        a       owl:Ontology .
+
+:hatAusstattung  a   owl:ObjectProperty ;
+        rdfs:domain  <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875> ;
+        rdfs:range   :Austattung .
+
+:Bezeichnung  a          :Hersteller , owl:NamedIndividual ;
+        :hatBezeichnung  "Sony"^^xsd:string .
+
+:hatBrennweiteMax  a  owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:hatHersteller  a    owl:ObjectProperty ;
+        rdfs:domain  <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875> , :Adapter ;
+        rdfs:range   :Hersteller .
+
+:hatAllgemeineDaten  a  owl:ObjectProperty ;
+        rdfs:domain  <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875> ;
+        rdfs:range   :Allgemeine_Daten .
+
+:hatHomepage  a      owl:DatatypeProperty ;
+        rdfs:domain  :Hersteller ;
+        rdfs:range   xsd:string .
+
+:anzahlBlendlamellen  a  owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:Max_Brennweite  a         :Technische_Daten , owl:NamedIndividual ;
+        :hatBrennweiteMax  "75"^^xsd:int .
+
+:Austattung  a  owl:Class .
+
+:hatBrennweiteMin  a  owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:anzahlGruppen  a    owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:Homepage  a          :Hersteller , owl:NamedIndividual ;
+        :hatHomepage  "htttp://www.sony.de/electronics/objective/t/kameraobjektive"^^xsd:string .
+
+:Filtergrösse  a           :Technische_Daten , owl:NamedIndividual ;
+        :hatBrennweiteMax  "67"^^xsd:int .
+
+:hatLichstärke  a    owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:float .
+
+:Ultraschallmotor  a           :Austattung , owl:NamedIndividual ;
+        :hatInnenfokussierung  true .
+
+:Anzahl_Linsen  a      :Technische_Daten , owl:NamedIndividual ;
+        :anzahlLinsen  "16"^^xsd:int .
+
+[ a            owl:AllDisjointClasses ;
+  owl:members  ( :Adapter :Allgemeine_Daten :Austattung :Fotokamera-Objektive :Hersteller :Technische_Daten )
+] .
+
+:Länge  a          :Allgemeine_Daten , owl:NamedIndividual ;
+        :hatLänge  "94"^^xsd:int .
+
+:hatNaheinstellgrenze
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:hatAsphaerischeLinsen
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
+
+[ a            owl:AllDisjointClasses ;
+  owl:members  ( :Allgemeine_Daten :Austattung :Fotokamera-Objektive :Hersteller :Technische_Daten )
+] .
+
+<http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875>
+        a                owl:Class ;
+        rdfs:subClassOf  :Zoomobjektiv , :Weitwinkelobjektiv .
+
+:hatUltraschallmotor  a  owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
+
+:Autofokus  a          :Austattung , owl:NamedIndividual ;
+        :hatAutofokus  true .
+
+:Lichststärke  a        :Technische_Daten , owl:NamedIndividual ;
+        :hatLichstärke  "2.8"^^xsd:float .
+
+:Anzahl_Gruppen  a      :Technische_Daten , owl:NamedIndividual ;
+        :anzahlGruppen  "14"^^xsd:int .
+
+:Fotokamera-Objektive
+        a       owl:Class .
+
+:ED_Linse  a          :Austattung , owl:NamedIndividual ;
+        :hatEDLinsen  false .
+
+:hatAußendurchmesser  a  owl:DatatypeProperty ;
+        rdfs:domain  :Allgemeine_Daten ;
+        rdfs:range   xsd:int .
+
+:Max_Abbildungsmassstab
+        a                          :Technische_Daten , owl:NamedIndividual ;
+        :hatMaxAbbildungsmassstab  "1:4,55"^^xsd:string .
+
+:Min_Brennweite  a         :Technische_Daten , owl:NamedIndividual ;
+        :hatBrennweiteMax  "28"^^xsd:int .
+
+:hatGewicht  a       owl:DatatypeProperty ;
+        rdfs:domain  :Allgemeine_Daten ;
+        rdfs:range   xsd:int .
+
+:hatTechnischeDaten  a  owl:ObjectProperty ;
+        rdfs:domain  <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875> ;
+        rdfs:range   :Technische_Daten .
+
+:Gewicht  a          :Allgemeine_Daten , owl:NamedIndividual ;
+        :hatGewicht  "565"^^xsd:int .
+
+:Zoomobjektiv  a         owl:Class ;
+        rdfs:subClassOf  :Fotokamera-Objektive .
+
+:hatInnenfokussierung
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
+
+:hatModellbezeichnung
+        a            owl:DatatypeProperty ;
+        rdfs:domain  :Allgemeine_Daten ;
+        rdfs:range   xsd:string .
+
+:Außendurchmesser  a          :Allgemeine_Daten , owl:NamedIndividual ;
+        :hatAußendurchmesser  "77"^^xsd:int .
+
+:Technische_Daten  a  owl:Class .
+
+:Asphaerische_Linse  a          :Austattung , owl:NamedIndividual ;
+        :hatAsphaerischeLinsen  false .
+
+:Bajonett-Adapter  a           :Adapter , owl:NamedIndividual ;
+        :adapterBezeichnung    "Sony AF"^^xsd:string ;
+        :hatBajonettAnschluss  :Bajonett-Adapter .
+
+:anzahlLinsen  a     owl:DatatypeProperty ;
+        rdfs:domain  :Technische_Daten ;
+        rdfs:range   xsd:int .
+
+:Anzahl_Blendlamellen
+        a                     :Technische_Daten , owl:NamedIndividual ;
+        :anzahlBlendlamellen  "7"^^xsd:int .
+
+:Weitwinkelobjektiv  a    owl:Class ;
+        rdfs:subClassOf   :Fotokamera-Objektive ;
+        owl:disjointWith  :Zoomobjektiv .
+
+:adapterBezeichnung  a  owl:DatatypeProperty ;
+        rdfs:domain  :Adapter ;
+        rdfs:range   xsd:string .
+
+:hatBajonettAnschluss
+        a            owl:ObjectProperty ;
+        rdfs:domain  <http://www.semanticweb.org/rasheed/ontologies/2014/4/untitled-ontology-26#Sony28-75_mm_2,8_SAM_SAL-2875> ;
+        rdfs:range   :Adapter .
+
+:hatBezeichnung  a   owl:DatatypeProperty ;
+        rdfs:domain  :Hersteller ;
+        rdfs:range   xsd:string .
+
+:hatAutofokus  a     owl:DatatypeProperty ;
+        rdfs:domain  :Austattung ;
+        rdfs:range   xsd:boolean .
