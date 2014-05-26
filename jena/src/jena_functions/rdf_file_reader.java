@@ -54,7 +54,7 @@ public class rdf_file_reader{
 		InputStream in  = FileManager.get().open(filepath);
 		
 		if(in == null){
-			throw new RDFFileNotFoundException("File not found in: filepath");
+			throw new RDFFileNotFoundException("File not found in: " + filepath);
 		}//end if(in == null)
 		
 		//creating and returning the model to the caller
