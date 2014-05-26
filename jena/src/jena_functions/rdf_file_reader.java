@@ -35,9 +35,6 @@ import com.hp.hpl.jena.rdf.model.ModelFactoryBase;
 import com.hp.hpl.jena.util.FileManager;
 
 public class rdf_file_reader{
-		
-	//file-path related strings
-	private static String ROOT_PATH = "./";
 	
 	/*********************************************************************
 	 * read_file(filename, path)
