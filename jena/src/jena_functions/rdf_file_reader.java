@@ -58,9 +58,8 @@ public class rdf_file_reader{
 		}//end if(in == null)
 		
 		//creating and returning the model to the caller
-		Model m;
 		try{
-			return ModelFactory.createDefaultModel().read((filepath) , null);
+			return ModelFactory.createDefaultModel().read(in , "");
 		}
 		catch (RiotException e){
 			throw new RDFFileNotValidException();
