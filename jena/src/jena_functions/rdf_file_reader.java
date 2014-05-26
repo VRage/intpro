@@ -35,9 +35,7 @@ import com.hp.hpl.jena.rdf.model.ModelFactoryBase;
 import com.hp.hpl.jena.util.FileManager;
 
 public class rdf_file_reader{
-	
-	
-	
+		
 	//file-path related strings
 	private static String ROOT_PATH = "./";
 	
@@ -66,27 +64,6 @@ public class rdf_file_reader{
 		
 		//creating and returning the model to the caller
 		return ModelFactory.createDefaultModel().read((filepath) , null);
+		
 	}//end method open_file(filename, path)
-	
-	
-	/*********************************************************************
-	 * read_file(filename)
-	 * opens an existing RDF-file which is placed in the root-folder or an default-safe-path
-	 * and reads the content into a rdf-model object
-	 * @param filename > string with the name of the rdf-file to open
-	 **********************************************************************/
-	public static Model read_file(String filename) throws IllegalArgumentException, RiotException{
-		return read_file(filename, ROOT_PATH);
-	}//end method open_file(filename)
-	
-	/*********************************************************************
-	 * set_ROOT_PATH(path)
-	 * sets the ROOT_PATH attribute to the given path
-	 * for example to set a default read and safe directory for the RDF Files
-	 * the default ROOT_PATH is the project root-directory "./"
-	 * @param path - the new default path to the rdf files.
-	 *********************************************************************/
-	public static void set_ROOT_PATH(String path){
-		ROOT_PATH = path;
-	}
-}
+}//end class
