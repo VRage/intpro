@@ -1,0 +1,71 @@
+<http://doerrfoto.de/rdf/AllgemeineDatenSony_28-75mm_2,8_SAM_SAL-2875>
+        <http://doerrfoto.de/rdf/hatAussendurchmesser>
+                "77"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatBayonettanschluss>
+                <http://doerrfoto.de/rdf/SonyAF> ;
+        <http://doerrfoto.de/rdf/hatGewicht>
+                "565"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatHersteller>
+                <http://doerrfoto.de/rdf/Sony> ;
+        <http://doerrfoto.de/rdf/hatLaenge>
+                "94"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatModellbezeichnung>
+                "28-75 mm 2,8 SAM SAL-2875"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+<Subject>  <praedikat>  <Object> .
+
+<http://doerrfoto.de/rdf/Sony>
+        <http://doerrfoto.de/rdf/hatBezeichnung>
+                "Sony"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        <http://doerrfoto.de/rdf/hatHomepage>
+                "http://www.sony.de/electronics/objektive/t/kameraobjektive"^^<http://www.w3.org/2001/XMLSchema#string> .
+
+<http://doerrfoto.de/rdf/Ausstattung>
+        <http://doerrfoto.de/rdf/hatAsphaerischeLinsen>
+                false ;
+        <http://doerrfoto.de/rdf/hatAutoFokus>
+                true ;
+        <http://doerrfoto.de/rdf/hatBildstabilisator>
+                false ;
+        <http://doerrfoto.de/rdf/hatEDLinsen>
+                false ;
+        <http://doerrfoto.de/rdf/hatInnenfokusierung>
+                false ;
+        <http://doerrfoto.de/rdf/hatUltraschallmotor>
+                true .
+
+<http://doerrfoto.de/rdf/TechnischeDatenSony_28-75mm_2,8_SAM_SAL-2875>
+        <http://doerrfoto.de/rdf/hatAnzahlBlendlamellen>
+                "7"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatAnzahlGruppen>
+                "14"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatAnzahlLinsen>
+                "16"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatBrennweiteMax>
+                "75"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatBrennweiteMin>
+                "28"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatFiltergroesse>
+                "67"^^<http://www.w3.org/2001/XMLSchema#int> ;
+        <http://doerrfoto.de/rdf/hatLichtstaerke>
+                "2.8"^^<http://www.w3.org/2001/XMLSchema#double> ;
+        <http://doerrfoto.de/rdf/hatMaxAbbildungmassstab>
+                "1:4,55"^^<http://www.w3.org/2001/XMLSchema#string> ;
+        <http://doerrfoto.de/rdf/hatNaheinstellgrenze>
+                "380"^^<http://www.w3.org/2001/XMLSchema#int> .
+
+<Zoomobjektiv>  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://doerrfoto.de/rdf/Fotokameraobjektiv> .
+
+<Weitwinkelobjektiv>  <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://doerrfoto.de/rdf/Fotokameraobjektiv> .
+
+<http://doerrfoto.de/rdf/Sony_28-75mm_2,8_SAM_SAL-2875>
+        <http://www.w3.org/2000/01/rdf-schema#subClassOf>
+                <http://doerrfoto.de/rdf/Weitwinkelobjektiv> , <http://doerrfoto.de/rdf/Zoomobjektiv> ;
+        <http://doerrfoto.de/rdf/hatAllgemeineDaten>
+                <http://doerrfoto.de/rdf/AllgemeineDatenSony_28-75mm_2,8_SAM_SAL-2875> ;
+        <http://doerrfoto.de/rdf/hatAusstattung>
+                <http://doerrfoto.de/rdf/AusstattungSony_28-75mm_2,8_SAM_SAL-2875> ;
+        <http://doerrfoto.de/rdf/hatTechnischeDaten>
+                <http://doerrfoto.de/rdf/TechnischeDatenSony_28-75mm_2,8_SAM_SAL-2875> .
