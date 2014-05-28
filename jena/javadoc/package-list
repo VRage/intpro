@@ -1,0 +1,6 @@
+application
+demo_jena_functions
+exceptions.RDFFileExceptions
+exceptions.fuseki_exceptions
+jena_functions
+jena_functions._pawlak
