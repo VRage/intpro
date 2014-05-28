@@ -1,5 +1,7 @@
 package jena_functions;
 
+import org.apache.http.conn.HttpHostConnectException;
+
 import com.hp.hpl.jena.query.DatasetAccessor;
 import com.hp.hpl.jena.rdf.model.Model;
 
@@ -45,10 +47,12 @@ public class ImportToFuseki {
 	}
 	
 	
+
 	/**
 	 * Add a rdfdata model into your fuseki server
+	 * @throws HttpHostConnectException
 	 */
-	public void storeToFuseki() 
+	public void storeToFuseki() throws HttpHostConnectException
 	{
 		if(accessor != null && rdfdata != null)
 			accessor.add(rdfdata);
