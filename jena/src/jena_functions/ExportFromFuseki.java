@@ -8,6 +8,13 @@ import org.apache.http.conn.HttpHostConnectException;
 import com.hp.hpl.jena.query.DatasetAccessor;
 import com.hp.hpl.jena.rdf.model.Model;
 
+import exceptions.RDFFileExceptions.RDFFileNotFoundException;
+import exceptions.RDFFileExceptions.RDFFileNotValidException;
+import exceptions.fuseki_exceptions.NoDatasetAccessorException;
+import exceptions.fuseki_exceptions.NoDatasetGraphException;
+import exceptions.fuseki_exceptions.NoPagesDirException;
+import exceptions.fuseki_exceptions.NoServerConfigException;
+
 /**
  * This Class writes RDF-Models from fuseki into files 
  * or print it on the console.
@@ -73,19 +80,18 @@ public class ExportFromFuseki {
 	 * Write method, creates files in a desired folder
 	 * Method can format the Models in TURTLE, XML/RDF or N-TRIPLES
 	 * @param filename
-	 * @param lang (TURTLE, XML/RDF, N-TRIPLES)
+	 * @param lang (TURTLE, RDF/XML, N-TRIPLES)
 	 * @throws FileNotFoundException
 	 * @throws HttpHostConnectException
 	 */
 	public void writeTo(String filename, String lang) throws FileNotFoundException, HttpHostConnectException{
-		
-		switch(lang.toUpperCase()){
+		lang=lang.toUpperCase();
+		switch(lang){
 			case "TURTLE":
 				getRDFModel().write(new FileOutputStream(filepath  + filename + ".ttl"), lang);
-				break;
-			case "XML":				
-			case "RDF":
-				getRDFModel().write(new FileOutputStream(filepath  + filename + ".rdf"), lang);
+				break;			
+			case "RDF/XML":
+				getRDFModel().write(new FileOutputStream(filepath  + filename + ".rdf"), "RDF/XML");
 				break;
 			case "N-TRIPLES":
 				getRDFModel().write(new FileOutputStream(filepath  + filename + ".rdf"), lang);
@@ -97,19 +103,19 @@ public class ExportFromFuseki {
 	}
 	/**
 	 * Write method displays formated Models on the console
-	 * Languages supported: TURTLE, XML/RDF, N-TRIPLES
-	 * @param lang
+	 * Languages supported: TURTLE, RDF/XML, N-TRIPLES
+	 * @param lang (TURTLE, RDF/XML, N-TRIPLES)
 	 * @throws HttpHostConnectException
 	 */
 	public void writeTo(String lang) throws HttpHostConnectException
 	{
-		switch(lang.toUpperCase()){
+		lang=lang.toUpperCase();
+		switch(lang){
 		case "TURTLE":
 			getRDFModel().write(System.out, lang);
-			break;
-		case "XML":				
-		case "RDF":
-			getRDFModel().write(System.out, lang);
+			break;			
+		case "RDF/XML":
+			getRDFModel().write(System.out, "RDF/XML");
 			break;
 		case "N-TRIPLES":
 			getRDFModel().write(System.out, lang);
@@ -119,4 +125,6 @@ public class ExportFromFuseki {
 			break;
 		}
 	}
+	
+	
 }
