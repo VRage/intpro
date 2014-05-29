@@ -20,7 +20,7 @@ import exceptions.fuseki_exceptions.NoPagesDirException;
 import exceptions.fuseki_exceptions.NoServerConfigException;
 /**
  * This class builds a connection to the Fuseki-Server. The default URL to the main-page of the Fuseki-Server is 
- * "localohost:3030". Open a browser, type in the URL and go to "Control Panel" and select your dataset to access RDF-Files and RDF-models. 
+ * "localhost:3030". Open a browser, type in the URL and go to "Control Panel" and select your dataset to access RDF-Files and RDF-models. 
  * This is the place where RDF will be stored and where you can execute Queries or upload RDF-files.
  * @author Dilek R.
  *
