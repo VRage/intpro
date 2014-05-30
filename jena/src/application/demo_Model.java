@@ -1,4 +1,4 @@
-package demo_jena_functions;
+package application;
 
 import java.io.FileNotFoundException;
 import java.util.Observable;
@@ -33,10 +33,10 @@ import exceptions.fuseki_exceptions.NoServerConfigException;
 **************************************************************/
 public class demo_Model extends Observable{
 	
-	Model RDFModel;
-	fuseki_connector server;
-	ImportToFuseki imp;
-	ExportFromFuseki exp;
+	private Model RDFModel;
+	private fuseki_connector server;
+	private ImportToFuseki imp;
+	private ExportFromFuseki exp;
 	
 	public demo_Model(){
 		try {
