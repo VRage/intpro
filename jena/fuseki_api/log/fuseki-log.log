@@ -2418,3 +2418,86 @@
 14:45:13 INFO  Server               :: Fuseki 1.0.1 2014-01-18T19:01:20+0000
 14:45:13 INFO  Server               :: Incoming connections limited to localhost
 14:45:13 INFO  Server               :: Started 2014/05/30 14:45:13 MESZ on port 3030
+15:02:41 INFO  Server               :: Dataset path = /ds
+15:02:41 INFO  Server               :: Fuseki 1.0.1 2014-01-18T19:01:20+0000
+15:02:41 INFO  Server               :: Incoming connections limited to localhost
+15:02:41 INFO  Server               :: Started 2014/05/30 15:02:41 MESZ on port 3030
+15:02:43 INFO  Server               :: Stopped 2014/05/30 15:02:43 MESZ on port 3030
+15:03:11 INFO  Server               :: Dataset path = /ds
+15:03:11 INFO  Server               :: Fuseki 1.0.1 2014-01-18T19:01:20+0000
+15:03:11 INFO  Server               :: Incoming connections limited to localhost
+15:03:11 INFO  Server               :: Started 2014/05/30 15:03:11 MESZ on port 3030
+15:03:12 INFO  Server               :: Stopped 2014/05/30 15:03:12 MESZ on port 3030
+15:06:46 INFO  Server               :: Dataset path = /ds
+15:06:46 INFO  Server               :: Fuseki 1.0.1 2014-01-18T19:01:20+0000
+15:06:46 INFO  Server               :: Incoming connections limited to localhost
+15:06:46 INFO  Server               :: Started 2014/05/30 15:06:46 MESZ on port 3030
+15:06:46 INFO  Server               :: Stopped 2014/05/30 15:06:46 MESZ on port 3030
+15:06:50 WARN  Server               :: Already initialized: dataset = /ds
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: QueryTimeouts
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: QueryExecErrors
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: UpdateExecErrors
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPget
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPgetGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPgetBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPhead
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPheadGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPheadBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPput
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPputGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPputBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpost
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpostGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpostBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdelete
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdeleteGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdeleteBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatch
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatchGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatchBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptions
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptionsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptionsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: Requests
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: RequestsBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPget
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPgetGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPgetBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPhead
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPheadGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPheadBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPput
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPputGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPputBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpost
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpostGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpostBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdelete
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdeleteGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPdeleteBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatch
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatchGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPpatchBad
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptions
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptionsGood
+15:06:50 WARN  CounterSet           :: Duplicate counter in counter set: GSPoptionsBad
+15:06:50 INFO  Server               :: Dataset path = /ds
+15:06:50 INFO  Server               :: Fuseki 1.0.1 2014-01-18T19:01:20+0000
+15:06:50 INFO  Server               :: Incoming connections limited to localhost
+15:06:50 INFO  Server               :: Started 2014/05/30 15:06:50 MESZ on port 3030

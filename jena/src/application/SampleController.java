@@ -2,25 +2,20 @@ package application;
 
 
 
+
 import java.io.File;
 import java.io.IOException;
-import java.util.LinkedList;
-import java.util.List;
 
 import javafx.event.ActionEvent;
-import javafx.event.Event;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
-import javafx.scene.layout.BackgroundFill;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 import org.apache.commons.io.FilenameUtils;
-
-import com.sun.prism.paint.Color;
 
 import exceptions.RDFFileExceptions.RDFFileNotFoundException;
 import exceptions.RDFFileExceptions.RDFFileNotValidException;
@@ -46,6 +41,9 @@ public class SampleController {
 	@FXML private Label label_ServerState;
 	@FXML private Button btn_Connect;
 	@FXML private javafx.scene.control.Button closeButton;
+	@FXML private Button btn_load;
+	@FXML private Button btn_save;
+	
 
 	
 	
@@ -57,6 +55,8 @@ public class SampleController {
 		Serverstate=false;
 		saveExtensionFilter = new ExtensionFilter("Dataextensions", "*.ttl", "*.rdf", "*.nt");
 		loadExtensionFilter = new ExtensionFilter("Dataextensions",  "*.ttl", "*.rdf", "*.nt", "*.owl");
+		btn_save.disableProperty().set(true);
+		btn_load.disableProperty().set(true);
 	}
 	@FXML
 	private void closeButtonAction(){
@@ -76,8 +76,8 @@ public class SampleController {
 		FC.setSelectedExtensionFilter(loadExtensionFilter);
 		Stage stage = new Stage();
 		FC.setTitle("Open Resource File");
-		File init = new File("./");
-		FC.setInitialDirectory(init);
+//		File init = new File("./");
+//		FC.setInitialDirectory(init);
 		File file = FC.showOpenDialog(stage);
 		if(file != null)
 			model.readRDFFile(file.getCanonicalPath());
@@ -131,12 +131,17 @@ public class SampleController {
 			label_ServerState.setText("Server state: connected");
 			label_ServerState.setTextFill(Paint.valueOf("#00AA00"));
 			btn_Connect.setText("Disconnect");
+			btn_save.disableProperty().set(false);
+			btn_load.disableProperty().set(false);
+			
 		}
 		else
 		{
 			label_ServerState.setText("Server state: not connected");
 			label_ServerState.setTextFill(Paint.valueOf("#AA0000"));
 			btn_Connect.setText("Connect");
+			btn_save.disableProperty().set(true);
+			btn_load.disableProperty().set(true);
 		}
 	}
 }
