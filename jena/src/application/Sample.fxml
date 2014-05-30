@@ -61,7 +61,7 @@
                   </AnchorPane>
               </items>
             </SplitPane>
-            <Button id="buttonkonnect" layoutX="509.0" layoutY="324.0" mnemonicParsing="false" text="save File" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="35.0" />
+            <Button id="buttonkonnect" layoutX="509.0" layoutY="324.0" mnemonicParsing="false" onAction="#btn_save_action" text="save File" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="35.0" />
             <Button layoutX="513.0" layoutY="324.0" mnemonicParsing="false" onAction="#btn_load_action" text="load File" AnchorPane.bottomAnchor="26.0" AnchorPane.rightAnchor="96.0" />
       </children>
     </AnchorPane>
