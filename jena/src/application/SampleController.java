@@ -67,7 +67,6 @@ public class SampleController {
 		model = new demo_Model();
 		label_ServerState= new Label();
 		Serverstate=false;
-		saveExtensionFilter = new ExtensionFilter("Dataextensions", "*.ttl", "*.rdf", "*.nt");
 		loadExtensionFilter = new ExtensionFilter("Dataextensions",  "*.ttl", "*.rdf", "*.nt", "*.owl");
 		btn_save.setDisable(true);
 		SetView();
@@ -87,29 +86,32 @@ public class SampleController {
 	}
 	@FXML private void btn_load_action(ActionEvent Event) throws RDFFileNotFoundException, RDFFileNotValidException, IOException{
 		FileChooser FC = new FileChooser();
-		FC.getExtensionFilters().add(loadExtensionFilter);
-		FC.setSelectedExtensionFilter(loadExtensionFilter);
+		FC.getExtensionFilters().addAll(new ExtensionFilter("TURTLE", "*.ttl"),
+				new ExtensionFilter("RDF/XML", "*.rdf"),
+				new ExtensionFilter("N-TRIPLES", "*.nt"),
+				new ExtensionFilter("Ontologie", "*.owl"));
+
 		Stage stage = new Stage();
 		FC.setTitle("Open Resource File");
-//		File init = new File("./");
-//		FC.setInitialDirectory(init);
+		File init = new File("./");
+		FC.setInitialDirectory(init);
 		File file = FC.showOpenDialog(stage);
 		if(file != null)
 			model.readRDFFile(file.getCanonicalPath());
 	}
+	
 	@FXML private void btn_save_action(ActionEvent Event) throws IOException{
 		FileChooser FC = new FileChooser();
 		Stage stage = new Stage();
 		FC.setTitle("Save Resource File");
-		FC.getExtensionFilters().add(saveExtensionFilter);
-		FC.setSelectedExtensionFilter(saveExtensionFilter);
+		FC.getExtensionFilters().addAll(new ExtensionFilter("TURTLE", "*.ttl"),
+				new ExtensionFilter("RDF/XML", "*.rdf"),
+				new ExtensionFilter("N-TRIPLES", "*.nt"));
 		File init = new File("./");
 		FC.setInitialDirectory(init);
 		File file = FC.showSaveDialog(stage);
-		String ending = setRDFType(FilenameUtils.getExtension(file.getCanonicalPath()));
-		System.out.println(ending);
-		if (file != null || ending == null){
-			model.safeRDFFile(file.getCanonicalPath(), file.getName(), ending);
+		if (file != null || FC.getSelectedExtensionFilter().getDescription() == null){
+			model.safeRDFFile(file.getCanonicalPath(), file.getName(), FC.getSelectedExtensionFilter().getDescription());
 		}
 		
 	}
@@ -126,20 +128,7 @@ public class SampleController {
 			SetView();
 		}//end ifelse
 	}
-	
-	/** Hilfsmethoden **/
-	private String setRDFType(String ending){
-		switch(ending){
-		case "ttl":
-			return "TURTLE";
-		case "rdf":
-			return "RDF/XML";
-		case "nt":
-			return "N-TRIPLES";
-		default:
-			return "ttl";
-		}//end switch
-	}//end setRDFTYPE
+
 	public void SetView(){
 		if(Serverstate)
 		{

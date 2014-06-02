@@ -128,7 +128,7 @@ public class demo_Model extends Observable{
 	 * @param filytype > the name of the ontologie of the outputfile
 	 **********************************************************************/
 	public void safeRDFFile(String filePath, String filename, String filetype){
-		exp.setFilepath(filePath);
+//		exp.setFilepath(filePath);
 		try {
 			exp.writeTo(filename, filetype);
 		} catch (HttpHostConnectException e) {

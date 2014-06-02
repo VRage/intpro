@@ -88,13 +88,13 @@ public class ExportFromFuseki {
 		lang=lang.toUpperCase();
 		switch(lang){
 			case "TURTLE":
-				getRDFModel().write(new FileOutputStream(filepath  + filename + ".ttl"), lang);
+				getRDFModel().write(new FileOutputStream(filepath  + filename ), lang);
 				break;			
 			case "RDF/XML":
-				getRDFModel().write(new FileOutputStream(filepath  + filename + ".rdf"), "RDF/XML");
+				getRDFModel().write(new FileOutputStream(filepath  + filename), lang);
 				break;
 			case "N-TRIPLES":
-				getRDFModel().write(new FileOutputStream(filepath  + filename + ".rdf"), lang);
+				getRDFModel().write(new FileOutputStream(filepath  + filename), lang);
 				break;
 			default:
 				System.out.println("language not supported");
@@ -115,7 +115,7 @@ public class ExportFromFuseki {
 			getRDFModel().write(System.out, lang);
 			break;			
 		case "RDF/XML":
-			getRDFModel().write(System.out, "RDF/XML");
+			getRDFModel().write(System.out, lang);
 			break;
 		case "N-TRIPLES":
 			getRDFModel().write(System.out, lang);
