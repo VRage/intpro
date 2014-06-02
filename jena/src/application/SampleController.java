@@ -3,6 +3,7 @@ package application;
 
 
 
+
 import java.io.File;
 import java.io.IOException;
 
@@ -10,15 +11,19 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
+import javafx.scene.control.ScrollPane;
+import javafx.scene.control.TextArea;
 import javafx.scene.paint.Paint;
 import javafx.stage.FileChooser;
 import javafx.stage.FileChooser.ExtensionFilter;
 import javafx.stage.Stage;
 
 import org.apache.commons.io.FilenameUtils;
+import org.apache.http.conn.HttpHostConnectException;
 
 import exceptions.RDFFileExceptions.RDFFileNotFoundException;
 import exceptions.RDFFileExceptions.RDFFileNotValidException;
+import exceptions.fuseki_exceptions.NoDatasetAccessorException;
 
 public class SampleController {
 
@@ -43,7 +48,8 @@ public class SampleController {
 	@FXML private javafx.scene.control.Button closeButton;
 	@FXML private Button btn_load;
 	@FXML private Button btn_save;
-	
+	@FXML private TextArea txtField_SendQuery;
+	@FXML private Label label_GetQuery;
 
 	
 	
@@ -51,12 +57,21 @@ public class SampleController {
 	
 	public SampleController() {
 		// TODO Auto-generated constructor stub
+		btn_load = new Button();
+		btn_save = new Button();
+		btn_Connect = new Button();
+		
+		label_GetQuery = new Label();
+		txtField_SendQuery = new TextArea();
+		
 		model = new demo_Model();
+		label_ServerState= new Label();
 		Serverstate=false;
 		saveExtensionFilter = new ExtensionFilter("Dataextensions", "*.ttl", "*.rdf", "*.nt");
 		loadExtensionFilter = new ExtensionFilter("Dataextensions",  "*.ttl", "*.rdf", "*.nt", "*.owl");
-		btn_save.disableProperty().set(true);
-		btn_load.disableProperty().set(true);
+		btn_save.setDisable(true);
+		SetView();
+	
 	}
 	@FXML
 	private void closeButtonAction(){
@@ -143,5 +158,19 @@ public class SampleController {
 			btn_save.disableProperty().set(true);
 			btn_load.disableProperty().set(true);
 		}
+	}
+	@FXML private void sendQuery(){
+	
+		try {
+			label_GetQuery.setText(model.getQuery(txtField_SendQuery.getText()));
+		} catch (HttpHostConnectException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		} catch (NoDatasetAccessorException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+//	/	label_GetQuery.setText("Hallo");
+		
 	}
 }

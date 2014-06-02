@@ -9,6 +9,7 @@ import jena_functions.ExportFromFuseki;
 import jena_functions.ImportToFuseki;
 import jena_functions.fuseki_connector;
 import jena_functions.rdf_file_reader;
+import jena_functions.sparql01;
 
 import com.hp.hpl.jena.query.DatasetAccessor;
 import com.hp.hpl.jena.rdf.model.Model;
@@ -102,6 +103,21 @@ public class demo_Model extends Observable{
 		}
 		
 	}//end readRDFFile(filename, path)
+	
+	
+	/*********************************************************************
+	 * getQuery(query)
+	 * @param filepath >the path to the rdf file
+	 * 				   > relative paths must be in the same root directory 
+	 *                   as the rdf_file_reader class. the representative shortcut 
+	 *                   for the root-directory is "./" followed by subfolders
+	 *                   "./subfolderexample/subsubfolderexample/"
+	 * @throws HttpHostConnectException 
+	 * @throws NoDatasetAccessorException 
+	 **********************************************************************/
+	public String getQuery(String query) throws HttpHostConnectException, NoDatasetAccessorException{
+		return sparql01.query01(query, server.getAccessor().getModel());
+	}//end getQuery
 	
 	/*********************************************************************
 	 * safeRDFFile(filePath, filename, filetype)
