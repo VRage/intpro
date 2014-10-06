@@ -1,0 +1,4 @@
+This list contains all notifyObserverCases for the Models.
+
+1  = FUSEKI_START - starts a fuseki session
+2  = FUSEKI_STOP  - ends a running fuseki session
