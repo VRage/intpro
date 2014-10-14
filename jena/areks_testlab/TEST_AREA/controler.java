@@ -5,42 +5,46 @@ import javax.swing.JOptionPane;
 
 import _BASIC_MODEL.BASIC_FUSEKI_CONNECT;
 import _EXCEPTIONS.FUSEKI_SERVER_EXCEPTIONS.NoPagesDirException;
-import _GLOBAL.enEN;
+import _GLOBAL.currLANG;
 
+/** Controler-Plugin for  the Fuseki GUI **/
 public class controler {
 
-	/** Model **/
 	private BASIC_FUSEKI_CONNECT model;
-	
-	/** VIEW **/
+	private currLANG currLang;
 	private view view;
-	
-	/** DEFAULTS **/
 	private String DEFAULT_DATASET = "/ds";
 	private String DEFAULT_PAGEDIR = "./fuseki_api/pages";
 	private String DEFAULT_LOGPROPPATH = "./fuseki_api/log4j.properties";
-	
-	/** CUSTOM PROP **/
 	private String DATASET;
 	private String PAGEDIR;
 	private String LOGPROPPATH;
-	
-	/** ERRORHANDLING **/
-	JFrame frame = new JFrame();
+	// just fpr the ErrorMsg dialog
+	private JFrame errorFrame = new JFrame();
 	
 	public controler(){
 		this.DATASET = DEFAULT_DATASET;
 		this.LOGPROPPATH = DEFAULT_LOGPROPPATH;
 		this.PAGEDIR = DEFAULT_PAGEDIR;
 		
-		model = createNewModel();
+		this.currLang = new currLANG();
+		this.model = createNewModel();
+		this.view = new view(this);
+	}
+	
+	public void start(){
+		view.showView();
+	}
+	
+	public currLANG getLang(){
+		return this.currLang;
 	}
 	
 	private BASIC_FUSEKI_CONNECT createNewModel(){
 		try {
 			return new BASIC_FUSEKI_CONNECT(DATASET, PAGEDIR, LOGPROPPATH);
 		} catch (NoPagesDirException e) {
-			JOptionPane.showMessageDialog(frame, enEN.ERROR_NOPAGEDIR);
+			JOptionPane.showMessageDialog(errorFrame, currLang.getCurrLang().ERROR_NOPAGEDIR);
 			return null;
 		}
 	}

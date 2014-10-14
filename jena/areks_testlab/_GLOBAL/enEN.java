@@ -1,5 +1,12 @@
 package _GLOBAL;
 
-public class enEN {
-	public static final String ERROR_NOPAGEDIR = "No pages directory path set!";
+public class enEN extends Language{
+		
+		public enEN(){
+			ERROR_NOPAGEDIR = "No pages directory path set!";
+			
+			CONNECTFUSEKIBUTTONCONNECT = "connect";
+			CONNECTFUSEKIBUTTONDISCONNECT = "disconnect";
+		}
+	
 }
